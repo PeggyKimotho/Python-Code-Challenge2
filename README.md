@@ -2,25 +2,23 @@
 
 This challenge defines a basic restaurant review system that allows users to create customers, restaurants, and reviews.
 
-The Restaurant Review System is a Python codebase that models a basic restaurant review system. This system allows users to create customers, restaurants, and reviews, facilitating the management and retrieval of customer feedback and restaurant information. The code is organized into three classes: Review, Customer, and Restaurant, each serving a specific role in the system.
+This system allows users to create customers, restaurants, and reviews, facilitating the management and retrieval of customer feedback and restaurant information. The code is organized into three classes: Review, Customer, and Restaurant, each serving a specific role in the system.
 
 ## Classes
 
 ### Review
 
-The Review class encapsulates the concept of a customer's review of a restaurant. It captures essential information about the review, including the customer, the restaurant being reviewed, and the assigned rating. To maintain a centralized repository of all reviews, the class includes a static list called all_reviews.
-
+The Review class captures essential information about the review, including the customer, the restaurant being reviewed, and the assigned rating. 
 #### Methods:
 
 - **__init__(self, customer, restaurant, rating):** Constructor method initializes a new review object with the provided customer, restaurant, and rating. The review is then automatically added to the all_reviews list.
 - **get_rating(self):** Returns the rating given in the review.
 - **get_customer(self):** Returns the customer who authored the review.
 - **get_restaurant(self):** Returns the restaurant being reviewed.
-- **all(cls):** Class method returning a list of all reviews created.
 
 ### Customer
 
-The Customer class represents an individual who can write reviews for restaurants. It stores customer-related data and actions. Each customer instance is tracked in the static list all_customers.
+The Customer class represents an individual who can write reviews for restaurants. It stores customer-related data and actions. 
 
 #### Methods:
 
@@ -30,10 +28,9 @@ The Customer class represents an individual who can write reviews for restaurant
 - **full_name(self):** Generates and returns the full name of the customer by combining the given and family names.
 - **reviewed_restaurants(self):** Retrieves a list of restaurants that the customer has reviewed.
 - **add_review(self, restaurant, rating):** Allows the customer to create a new review for a restaurant with a given rating.
-- **all(cls):** Class method returning a list of all customers created.
 
 ### Restaurant
-The Restaurant class models a restaurant and its associated data, such as reviews and customers. All restaurant instances are added to the static list all_restaurants.
+The Restaurant class models a restaurant and its associated data, such as reviews and customers. 
 
 #### Methods:
 
@@ -44,7 +41,6 @@ The Restaurant class models a restaurant and its associated data, such as review
 - **customers(self):** Retrieves a list of customers who have reviewed the restaurant.
 - **average_star_rating(self):** Calculates and returns the average star rating for the restaurant based on its reviews.
 - **find_by_name(cls, name):** Class method to search for a restaurant by its name.
-- **all(cls):** Class method returning a list of all restaurants created.
 
 ### Usage/Sample
 
@@ -55,10 +51,16 @@ To utilize the Restaurant Review System, follow these steps:
 - Employ various methods to extract information, such as retrieving a customer's reviewed restaurants, finding a restaurant by name, and calculating average ratings.
 
 #### Sample instances for testing
+
 customer1 = Customer("John", "Doe")
+
 restaurant1 = Restaurant("Burger King")
+
 review1 = Review(customer1, restaurant1, 4)
 
+##### Print
 print(customer1.full_name())
+
 print(review1.get_rating())
+
 print(restaurant1)
